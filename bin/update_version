@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+
+if [ $# -ne 1 ]; then
+    echo "usage: $0 VERSION"
+    exit 1
+fi
+
+VERSION=$1
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)
+
+sed -i'' "s/^VERSION = .*/VERSION = \\\"${VERSION}\\\"/" "${DIR}/../setup.py"
+sed -i'' "s/^version = .*/version = \\\"${VERSION}\\\"/" "${DIR}/../docs/source/conf.py"
+sed -i'' "s/^release = .*/release = \\\"${VERSION}\\\"/" "${DIR}/../docs/source/conf.py"
+sed -i'' "s/^__version__ = .*/__version__ = \\\"${VERSION}\\\"/" "${DIR}/../pfp/__init__.py"
+sed -i'' "s/^Version: .*/Version: ${VERSION}/" "${DIR}/../pfp.egg-info/PKG-INFO"
+sed -i'' "s/tarball\/v.*/tarball\/v${VERSION}/" "${DIR}/../pfp.egg-info/PKG-INFO"

@@ -4,6 +4,8 @@
 import os, sys
 from setuptools import setup
 
+VERSION = "0.4.12-snapshot"
+
 setup(
     # metadata
     name="pfp",
@@ -17,13 +19,13 @@ setup(
         etc.
     """,
     license="MIT",
-    version="{{VERSION}}",
+    version=VERSION,
     author="James Johnson",
     maintainer="James Johnson",
     author_email="d0c.s4vage@gmail.com",
     url="https://github.com/d0c-s4vage/pfp",
     platforms="Cross Platform",
-    download_url="https://github.com/d0c-s4vage/pfp/tarball/v{{VERSION}}",
+    download_url="https://github.com/d0c-s4vage/pfp/tarball/v{}".format(VERSION),
     install_requires=open(
         os.path.join(os.path.dirname(__file__), "requirements.txt")
     )

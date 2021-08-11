@@ -14,7 +14,7 @@ import pfp.fuzz
 pfp.fuzz.init()
 
 
-__version__ = "{{VERSION}}"
+__version__ = "0.4.12-snapshot"
 
 PARSER = py010parser.c_parser.CParser()
 
