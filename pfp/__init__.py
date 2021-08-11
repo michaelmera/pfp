@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 
+__version__ = "0.4.12-snapshot"
+
+
 import os
 import six
 import sys
@@ -13,8 +16,6 @@ import pfp.fuzz
 
 pfp.fuzz.init()
 
-
-__version__ = "0.4.12-snapshot"
 
 PARSER = py010parser.c_parser.CParser()
 
