@@ -78,6 +78,7 @@ New versions of pfp are released by:
 
 * Merging all desired changes to the master branch
 * Updating the CHANGELOG with release notes for the new version
+* Updating the version number `bin/update_version X.Y.Z`
 * Tagging the current state of the master branch `git tag -a vX.Y.Z`. This will
   open your `$EDITOR` - paste in the contents of the `vX.Y.Z` CHANGELOG section
   as the tag's annotated text.
